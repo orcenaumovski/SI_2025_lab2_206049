@@ -53,3 +53,20 @@ if (item.getPrice() > 300 || item.getDiscount() > 0 || item.getQuantity() > 10)
 -FFF - сите се false: (250, 0, 1)
 
 Минималниот број на тест случаи потребни за да се постигне Multiple Condition тестирање е 4.
+
+6.
+testEveryStatement()
+-случај кога листата е null, assertThrows фрла исклучок, assertTrue проверува дали пораката е "allItems list can't be null!".
+-случај со невалиден item, assertThrows фрла исклучок, assertTrue проверува дали пораката е "Invalid item!".
+-валиден случај со валиден item, assertEquals проверува дали резултатот е точен.
+-случај со невалиден број на картичка, assertThrows фрла исклучок, assertTrue проверува дали пораката е "Invalid card number!".
+-случај со невалиден карактер во бројот на картичката, assertThrows фрла исклучок, assertTrue проверува дали пораката е "Invalid character in card number!".
+
+Со овој пристап се осигурам дека секоја логичка гранка и исклучок се покриени и тестиран е правилниот одговор на методот.
+
+test2_MultipleCondition() - Покривање на повеќе услови
+-функција condition која го содржи условот price > 300 || discount > 0 || quantity > 10.
+-TXX - assertTrue враќа true за точен прв услов, другите не ги проверува
+-FTX - assertTrue враќа true за точен втор услов, првиот е грешен, третиот не ги проверува
+-FFT - assertTrue враќа true за точен трет услов, првиот и вториот се грешни
+-FFF - assertFalse враќа false за сите грешни услови
